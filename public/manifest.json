@@ -1,0 +1,33 @@
+{
+    "manifest_version": 3,
+    "name": "Price Compare Chorome",
+    "version": "1.0",
+    "description": "Compare Amazon products with Yahoo Shopping",
+    "permissions": [
+        "scripting",
+        "tabs",
+        "storage"
+    ],
+    "host_permissions": [
+        "https://shopping.yahooapis.jp/*"
+    ],
+    "background": {
+        "service_worker": "assets/background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://www.amazon.co.jp/*"],
+            "js": ["assets/content.js"],
+            "run_at": "document_idle"
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": ["src/panel/index.html", "assets/panel.js"],
+            "matches": ["<all_urls>"]
+        }
+    ],
+    "action": {
+        "default_title": "Amazon Comparator"
+    }
+}
