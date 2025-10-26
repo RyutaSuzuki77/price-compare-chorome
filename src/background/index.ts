@@ -6,7 +6,8 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         url.searchParams.set('appid', YAHOO_APP_ID)
         url.searchParams.set('query', message.query)
         url.searchParams.set('results', '10')
-
+        url.searchParams.set('sort', '+price')
+        
         fetch(url.toString())
         .then(res => res.json())
         .then(data => sendResponse({ success: true, data }))

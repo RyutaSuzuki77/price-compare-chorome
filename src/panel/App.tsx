@@ -4,6 +4,7 @@ type YahooItem = {
     code: string;
     name: string;
     price: number;
+    url: string;
     image?: {
         medium?: string;
     } | null;
@@ -47,7 +48,9 @@ const App = () => {
                     <div key={item.code}>
                         <p>{item.name}</p>
                         <p>{item.price}円</p>
+                        <p><a href={item.url} target="_blank">URL</a></p>
                         <img src={item.image?.medium} alt={item.name} />
+                        <hr />
                     </div>
                 ))}
             </div>
