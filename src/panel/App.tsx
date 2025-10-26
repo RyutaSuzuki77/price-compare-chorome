@@ -44,15 +44,19 @@ const App = () => {
         >
             <h2 style={{ marginTop: 0 }}>Yahoo!価格比較</h2>
             <div>
-                {items.map((item) => (
-                    <div key={item.code}>
-                        <p>{item.name}</p>
-                        <p>{item.price}円</p>
-                        <p><a href={item.url} target="_blank">URL</a></p>
-                        <img src={item.image?.medium} alt={item.name} />
-                        <hr />
-                    </div>
-                ))}
+                {items.length === 0 ? (
+                    <p>該当する商品が見つかりませんでした。</p>
+                ) : (
+                    items.map((item) => (
+                        <div key={item.code}>
+                            <p>{item.name}</p>
+                            <p>{item.price}円</p>
+                            <p><a href={item.url} target="_blank">URL</a></p>
+                            <img src={item.image?.medium} alt={item.name} />
+                            <hr />
+                        </div>
+                    ))
+                )}
             </div>
         </div>
     )
