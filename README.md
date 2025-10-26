@@ -7,4 +7,4 @@ amazonで商品ページに遷移した際、類似商品をyahooショッピン
 フロントエンド:React + TypeScript  
 バックグランド:Chrome Extension MV3,Service Worker  
 ビルドツール:Vite  
-外部API:- Yahoo!ショッピングAPI V3
+外部API:Yahoo!ショッピングAPI V3
